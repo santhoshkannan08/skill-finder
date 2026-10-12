@@ -1,0 +1,33 @@
+{
+  "name": "skillfinder",
+  "private": true,
+  "scripts": {
+    "dev": "node server/src/server.js",
+    "build": "npm run build --workspace client",
+    "start": "node server/src/server.js",
+    "test": "npm test --workspace server",
+    "db:migrate": "npm run db:migrate --workspace server",
+    "db:seed": "npm run db:seed --workspace server"
+  },
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.1.2",
+    "bcryptjs": "^3.0.3",
+    "connect-pg-simple": "^10.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.7",
+    "express": "^5.3.0",
+    "express-session": "^1.19.0",
+    "helmet": "^8.3.0",
+    "lucide-react": "^1.55.0",
+    "pg": "^8.23.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router-dom": "^7.18.4",
+    "vite": "^6.0.7",
+    "zod": "^4.6.6"
+  }
+}

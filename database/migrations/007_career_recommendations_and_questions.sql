@@ -1,0 +1,10 @@
+ALTER TABLE questions ADD COLUMN IF NOT EXISTS is_active BOOLEAN NOT NULL DEFAULT TRUE;
+ALTER TABLE assessments ALTER COLUMN learning_path_id DROP NOT NULL;
+ALTER TABLE assessments ALTER COLUMN learning_goal DROP NOT NULL;
+ALTER TABLE assessments ALTER COLUMN experience_level DROP NOT NULL;
+ALTER TABLE assessments ALTER COLUMN target_duration_weeks DROP NOT NULL;
+ALTER TABLE assessments ALTER COLUMN study_hours_per_week DROP NOT NULL;
+ALTER TABLE assessments ALTER COLUMN preferred_learning_method DROP NOT NULL;
+ALTER TABLE roadmaps ADD COLUMN IF NOT EXISTS career_title TEXT;
+ALTER TABLE learning_paths ADD COLUMN IF NOT EXISTS entry_level TEXT NOT NULL DEFAULT 'Beginner';
+ALTER TABLE learning_paths ADD COLUMN IF NOT EXISTS example_projects JSONB NOT NULL DEFAULT '[]'::jsonb;

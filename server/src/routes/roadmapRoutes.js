@@ -1,0 +1,13 @@
+import { Router } from 'express';
+import { csrfProtection, requireAuth } from '../middleware/auth.js';
+import { generate, get, list, update, tasks, timeline, taskUpdate } from '../controllers/roadmapController.js';
+const router = Router();
+router.use(requireAuth);
+router.post('/generate', csrfProtection, generate);
+router.get('/', list);
+router.get('/:roadmapId', get);
+router.patch('/:roadmapId', csrfProtection, update);
+router.get('/:roadmapId/tasks', tasks);
+router.get('/:roadmapId/timeline', timeline);
+router.patch('/:roadmapId/tasks/:taskId', csrfProtection, taskUpdate);
+export default router;

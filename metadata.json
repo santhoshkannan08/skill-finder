@@ -1,0 +1,7 @@
+{
+  "name": "SkillFinder",
+  "description": "AI-Powered Personalized Learning & Skill Intelligence Platform with deterministic skill assessment, prerequisite-aware adaptive roadmaps, and verifiable SkillProof mastery.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
