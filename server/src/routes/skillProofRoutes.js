@@ -1,0 +1,11 @@
+import { Router } from 'express';
+import { csrfProtection, requireAuth } from '../middleware/auth.js';
+import { createEvidence, evidence, evidenceDetail, quiz, submitQuiz } from '../controllers/skillProofController.js';
+const router = Router();
+router.use(requireAuth);
+router.get('/tasks/:taskId/quiz-attempts', quiz);
+router.post('/tasks/:taskId/quiz-attempts', csrfProtection, submitQuiz);
+router.post('/skill-evidence', csrfProtection, createEvidence);
+router.get('/skill-evidence', evidence);
+router.get('/skill-evidence/:evidenceId', evidenceDetail);
+export default router;

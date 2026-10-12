@@ -1,0 +1,10 @@
+import { Router } from 'express';
+import { csrfProtection, requireAuth } from '../middleware/auth.js';
+import { complete, overview, skills, start } from '../controllers/progressController.js';
+const router = Router();
+router.use(requireAuth);
+router.post('/tasks/:taskId/start', csrfProtection, start);
+router.post('/tasks/:taskId/complete', csrfProtection, complete);
+router.get('/progress/overview', overview);
+router.get('/progress/skills', skills);
+export default router;
